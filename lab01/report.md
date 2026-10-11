@@ -55,6 +55,6 @@ The goal of this lab was to set up a reproducible Python 3.11.8 environment, tra
 Both models fit the Cloud, Edge and Mobile budgets on memory, latency and size. Neither fits TinyML on memory, because the whole Python process uses about 178 MiB while the limit is 256 KB. LogisticRegression (1.03 KB, 0.14 ms) is within the TinyML limits for size and latency, so with a runtime other than Python it could plausibly run there. RandomForest fails TinyML on size as well (284 KB against a 100 KB limit), although its 5.86 ms latency is still under the 10 ms limit.
 
 ## Three conclusions
-1. Accuracy against cost
-2. Training against inference
-3. Process memory against model size
+1. Accuracy against cost: The simpler model won on every measure here: LogisticRegression is slightly more accurate (0.9474 against 0.9357), far smaller, and far faster per prediction.
+2. Training against inference: A random forest has to run the sample through all 100 trees and combine their votes, and scikit-learn adds fixed overhead per call, which is why one prediction takes 5.86 ms. Logistic regression predicts with a single dot product, so it takes 0.14 ms. Training goes the other way here, probably because logistic regression is solved iteratively (up to 1000 iterations) on unscaled features, while the trees are built quickly on a small dataset.
+3. Process memory against model size: Both models use about 178 to 180 MiB even though their files are 1 KB and 284 KB, so almost all of that memory is the Python process itself: the interpreter, numpy, scipy and scikit-learn being loaded, not the model. This shows why TinyML fails on memory for both models: a 256 KB budget can’t hold a Python runtime at all.
