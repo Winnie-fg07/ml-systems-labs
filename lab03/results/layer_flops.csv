@@ -1,0 +1,4 @@
+layer,hand_flops,thop_macs,thop_as_flops_(x2),hand_over_thop_flops
+Linear 784->256,401408,200704.0,401408.0,1.0
+"Conv2d 16->32, 3x3, 14x14",1806336,903168.0,1806336.0,1.0
+Transformer encoder layer (seq 16),1114112,0.0,0.0,inf
