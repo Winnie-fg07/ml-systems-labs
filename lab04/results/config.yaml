@@ -1,0 +1,40 @@
+dataset:
+  source: OpenML adult, version 2 (UCI Adult / Census Income)
+  rows: 48842
+  columns: 15
+seed: 42
+split:
+  test_size: 0.3
+  stratified: true
+cleaning:
+  impute_numeric: median
+  impute_categorical: most_frequent
+  clip_percentiles:
+  - 1
+  - 99
+  scale: StandardScaler
+  one_hot: handle_unknown=ignore
+  duplicates_dropped_from_train: 24
+derived_features:
+- capital_net
+- hours_per_age
+model:
+  type: LogisticRegression
+  max_iter: 1000
+metrics:
+  accuracy_without: 0.854
+  f1_without: 0.6601
+  accuracy_with: 0.8578
+  f1_with: 0.6696
+processed_shapes:
+  train:
+  - 34165
+  - 107
+  test:
+  - 14653
+  - 107
+processed_sha256: 5f8485d44a2784a8f01afc574ee1cd52a90a6227be963d0bc93194bbe6bd46df
+versions:
+  numpy: 1.26.4
+  pandas: 2.2.2
+  scikit-learn: 1.5.0

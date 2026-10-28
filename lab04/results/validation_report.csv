@@ -1,0 +1,37 @@
+check,column,violations,detail,status
+type,age,0,"dtype=int64, expected int",PASS
+type,fnlwgt,0,"dtype=int64, expected int",PASS
+type,education-num,0,"dtype=int64, expected int",PASS
+type,capital-gain,0,"dtype=int64, expected int",PASS
+type,capital-loss,0,"dtype=int64, expected int",PASS
+type,hours-per-week,0,"dtype=int64, expected int",PASS
+type,workclass,0,"dtype=category, expected category",PASS
+type,education,0,"dtype=category, expected category",PASS
+type,marital-status,0,"dtype=category, expected category",PASS
+type,occupation,0,"dtype=category, expected category",PASS
+type,relationship,0,"dtype=category, expected category",PASS
+type,race,0,"dtype=category, expected category",PASS
+type,sex,0,"dtype=category, expected category",PASS
+type,native-country,0,"dtype=category, expected category",PASS
+type,income,0,"dtype=category, expected category",PASS
+range,age,0,"allowed 17-90, observed 17-90",PASS
+range,hours-per-week,0,"allowed 1-99, observed 1-99",PASS
+range,capital-gain,0,"allowed 0-99999, observed 0-99999",PASS
+range,capital-loss,0,"allowed 0-4356, observed 0-4356",PASS
+missing,age,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,workclass,2799,'?' or NaN counted as missing (allowed by policy),INFO
+missing,fnlwgt,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,education,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,education-num,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,marital-status,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,occupation,2809,'?' or NaN counted as missing (allowed by policy),INFO
+missing,relationship,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,race,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,sex,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,capital-gain,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,capital-loss,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,hours-per-week,0,'?' or NaN counted as missing (allowed by policy),INFO
+missing,native-country,857,'?' or NaN counted as missing (allowed by policy),INFO
+missing,income,0,'?' or NaN counted as missing (allowed by policy),INFO
+duplicates,all columns,52,"exact duplicate rows, kept in raw data",INFO
+label,income,0,values other than <=50K and >50K,PASS
