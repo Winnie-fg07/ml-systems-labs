@@ -1,0 +1,4 @@
+comparison,max_abs_diff,pass
+engine vs torch,0.0,True
+engine vs numerical,6.406217778476275e-10,True
+torch vs numerical,6.406217778476275e-10,True

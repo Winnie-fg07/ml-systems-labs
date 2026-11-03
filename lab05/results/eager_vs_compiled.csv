@@ -1,0 +1,7 @@
+variant,batch,runs,median_ms,note,speedup_vs_eager
+eager,1,100,0.4011,,1.0
+jit.trace,1,100,0.4114,,0.975
+torch.compile,1,100,0.3815,,1.051
+eager,128,20,0.8873,,1.0
+jit.trace,128,20,0.8576,,1.035
+torch.compile,128,20,0.6845,,1.296

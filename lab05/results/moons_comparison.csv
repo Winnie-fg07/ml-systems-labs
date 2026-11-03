@@ -1,0 +1,3 @@
+implementation,median_time_s,final_train_loss,test_acc
+my engine,73.7175,0.235766,0.92
+PyTorch,0.3646,0.235766,0.92

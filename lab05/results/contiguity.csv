@@ -1,0 +1,5 @@
+view,shape,stride,operation,non_contiguous_ms,contiguous_copy_ms,slowdown,cost_of_contiguous()_ms
+transpose view A.t(),"(2048, 2048)","(1, 2048)",x * 2,1.7943,1.8706,0.96,8.1207
+transpose view A.t(),"(2048, 2048)","(1, 2048)",sum(dim=1),3.5484,1.4502,2.45,8.1207
+"strided slice A[:, ::2]","(2048, 1024)","(2048, 2)",x * 2,1.1413,0.7464,1.53,1.1794
+"strided slice A[:, ::2]","(2048, 1024)","(2048, 2)",sum(dim=1),0.688,0.8254,0.83,1.1794
